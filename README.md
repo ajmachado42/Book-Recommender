@@ -21,6 +21,8 @@ How it works:
 
 Live site: https://ajmachado42.github.io/Book-Recommender/
 
+![Show Series recommending Valley of the Dolls for Real Housewives](product_screenshot.png "Book Recommender Screenshot")
+
 Publishing:
   The site is static and hosted on GitHub Pages. The page reads code/recommendations.json instead of calling the Python server.
   After editing the catalog in code/book_recommender.py, regenerate the JSON and push:
