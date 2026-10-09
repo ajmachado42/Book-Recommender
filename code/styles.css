@@ -124,7 +124,8 @@ header > p {
 
 .machine {
   min-height: auto;
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 .intro-panel {
@@ -332,6 +333,7 @@ input::placeholder {
 }
 
 .result-panel {
+  flex: 1;
   min-height: 360px;
   padding: 0 6vw 12px;
   position: relative;
