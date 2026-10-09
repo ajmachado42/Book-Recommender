@@ -1,0 +1,294 @@
+{
+ "lookup": {
+  "real housewives": "Real Housewives",
+  "the real housewives": "Real Housewives",
+  "rhobh": "Real Housewives",
+  "rhony": "Real Housewives",
+  "rhoa": "Real Housewives",
+  "rhoc": "Real Housewives",
+  "rhop": "Real Housewives",
+  "rhoslc": "Real Housewives",
+  "succession": "Succession",
+  "the white lotus": "The White Lotus",
+  "bridgerton": "Bridgerton",
+  "stranger things": "Stranger Things",
+  "black mirror": "Black Mirror",
+  "westworld": "Westworld",
+  "game of thrones": "Game of Thrones",
+  "the crown": "The Crown",
+  "euphoria": "Euphoria",
+  "mindhunter": "Mindhunter",
+  "true detective": "True Detective",
+  "big little lies": "Big Little Lies",
+  "yellowjackets": "Yellowjackets",
+  "squid game": "Squid Game",
+  "the last of us": "The Last of Us",
+  "severance": "Severance",
+  "dark": "Dark",
+  "only murders in the building": "Only Murders in the Building",
+  "killing eve": "Killing Eve",
+  "slow horses": "Slow Horses",
+  "slow horse": "Slow Horses",
+  "you": "You",
+  "ozark": "Ozark",
+  "peaky blinders": "Peaky Blinders",
+  "the marvelous mrs. maisel": "The Marvelous Mrs. Maisel",
+  "hacks": "Hacks",
+  "feud": "Feud",
+  "selling sunset": "Selling Sunset",
+  "emily in paris": "Emily in Paris",
+  "gossip girl": "Gossip Girl",
+  "fleabag": "Fleabag",
+  "schitt's creek": "Schitt's Creek",
+  "ted lasso": "Ted Lasso",
+  "the bear": "The Bear",
+  "chernobyl": "Chernobyl"
+ },
+ "shows": {
+  "Real Housewives": {
+   "show": "Real Housewives",
+   "title": "Valley of the Dolls",
+   "author": "Jacqueline Susann",
+   "year": 1966,
+   "goodreads_url": "https://www.goodreads.com/book/show/581811.Valley_of_the_Dolls"
+  },
+  "Succession": {
+   "show": "Succession",
+   "title": "Bonfire of the Vanities",
+   "author": "Tom Wolfe",
+   "year": 1987,
+   "goodreads_url": "https://www.goodreads.com/search?q=Bonfire+of+the+Vanities+Tom+Wolfe"
+  },
+  "The White Lotus": {
+   "show": "The White Lotus",
+   "title": "Bonfire of the Vanities",
+   "author": "Tom Wolfe",
+   "year": 1987,
+   "goodreads_url": "https://www.goodreads.com/search?q=Bonfire+of+the+Vanities+Tom+Wolfe"
+  },
+  "Bridgerton": {
+   "show": "Bridgerton",
+   "title": "Pride and Prejudice",
+   "author": "Jane Austen",
+   "year": 1813,
+   "goodreads_url": "https://www.goodreads.com/search?q=Pride+and+Prejudice+Jane+Austen"
+  },
+  "Stranger Things": {
+   "show": "Stranger Things",
+   "title": "It",
+   "author": "Stephen King",
+   "year": 1986,
+   "goodreads_url": "https://www.goodreads.com/search?q=It+Stephen+King"
+  },
+  "Black Mirror": {
+   "show": "Black Mirror",
+   "title": "Nineteen Eighty-Four",
+   "author": "George Orwell",
+   "year": 1949,
+   "goodreads_url": "https://www.goodreads.com/search?q=Nineteen+Eighty-Four+George+Orwell"
+  },
+  "Westworld": {
+   "show": "Westworld",
+   "title": "Do Androids Dream of Electric Sheep?",
+   "author": "Philip K. Dick",
+   "year": 1968,
+   "goodreads_url": "https://www.goodreads.com/search?q=Do+Androids+Dream+of+Electric+Sheep%3F+Philip+K.+Dick"
+  },
+  "Game of Thrones": {
+   "show": "Game of Thrones",
+   "title": "A Game of Thrones",
+   "author": "George R. R. Martin",
+   "year": 1996,
+   "goodreads_url": "https://www.goodreads.com/search?q=A+Game+of+Thrones+George+R.+R.+Martin"
+  },
+  "The Crown": {
+   "show": "The Crown",
+   "title": "Wolf Hall",
+   "author": "Hilary Mantel",
+   "year": 2009,
+   "goodreads_url": "https://www.goodreads.com/search?q=Wolf+Hall+Hilary+Mantel"
+  },
+  "Euphoria": {
+   "show": "Euphoria",
+   "title": "Less Than Zero",
+   "author": "Bret Easton Ellis",
+   "year": 1985,
+   "goodreads_url": "https://www.goodreads.com/search?q=Less+Than+Zero+Bret+Easton+Ellis"
+  },
+  "Mindhunter": {
+   "show": "Mindhunter",
+   "title": "The Silence of the Lambs",
+   "author": "Thomas Harris",
+   "year": 1988,
+   "goodreads_url": "https://www.goodreads.com/search?q=The+Silence+of+the+Lambs+Thomas+Harris"
+  },
+  "True Detective": {
+   "show": "True Detective",
+   "title": "The Big Sleep",
+   "author": "Raymond Chandler",
+   "year": 1939,
+   "goodreads_url": "https://www.goodreads.com/search?q=The+Big+Sleep+Raymond+Chandler"
+  },
+  "Big Little Lies": {
+   "show": "Big Little Lies",
+   "title": "The Stepford Wives",
+   "author": "Ira Levin",
+   "year": 1972,
+   "goodreads_url": "https://www.goodreads.com/search?q=The+Stepford+Wives+Ira+Levin"
+  },
+  "Yellowjackets": {
+   "show": "Yellowjackets",
+   "title": "Lord of the Flies",
+   "author": "William Golding",
+   "year": 1954,
+   "goodreads_url": "https://www.goodreads.com/search?q=Lord+of+the+Flies+William+Golding"
+  },
+  "Squid Game": {
+   "show": "Squid Game",
+   "title": "Battle Royale",
+   "author": "Koushun Takami",
+   "year": 1999,
+   "goodreads_url": "https://www.goodreads.com/search?q=Battle+Royale+Koushun+Takami"
+  },
+  "The Last of Us": {
+   "show": "The Last of Us",
+   "title": "The Road",
+   "author": "Cormac McCarthy",
+   "year": 2006,
+   "goodreads_url": "https://www.goodreads.com/search?q=The+Road+Cormac+McCarthy"
+  },
+  "Severance": {
+   "show": "Severance",
+   "title": "The Trial",
+   "author": "Franz Kafka",
+   "year": 1925,
+   "goodreads_url": "https://www.goodreads.com/search?q=The+Trial+Franz+Kafka"
+  },
+  "Dark": {
+   "show": "Dark",
+   "title": "The Time Machine",
+   "author": "H. G. Wells",
+   "year": 1895,
+   "goodreads_url": "https://www.goodreads.com/search?q=The+Time+Machine+H.+G.+Wells"
+  },
+  "Only Murders in the Building": {
+   "show": "Only Murders in the Building",
+   "title": "The Moonstone",
+   "author": "Wilkie Collins",
+   "year": 1868,
+   "goodreads_url": "https://www.goodreads.com/search?q=The+Moonstone+Wilkie+Collins"
+  },
+  "Killing Eve": {
+   "show": "Killing Eve",
+   "title": "American Psycho",
+   "author": "Bret Easton Ellis",
+   "year": 1991,
+   "goodreads_url": "https://www.goodreads.com/search?q=American+Psycho+Bret+Easton+Ellis"
+  },
+  "Slow Horses": {
+   "show": "Slow Horses",
+   "title": "Tinker Tailor Soldier Spy",
+   "author": "John le Carré",
+   "year": 1974,
+   "goodreads_url": "https://www.goodreads.com/search?q=Tinker+Tailor+Soldier+Spy+John+le+Carr%C3%A9"
+  },
+  "You": {
+   "show": "You",
+   "title": "Lolita",
+   "author": "Vladimir Nabokov",
+   "year": 1955,
+   "goodreads_url": "https://www.goodreads.com/search?q=Lolita+Vladimir+Nabokov"
+  },
+  "Ozark": {
+   "show": "Ozark",
+   "title": "No Country for Old Men",
+   "author": "Cormac McCarthy",
+   "year": 2005,
+   "goodreads_url": "https://www.goodreads.com/search?q=No+Country+for+Old+Men+Cormac+McCarthy"
+  },
+  "Peaky Blinders": {
+   "show": "Peaky Blinders",
+   "title": "The Godfather",
+   "author": "Mario Puzo",
+   "year": 1969,
+   "goodreads_url": "https://www.goodreads.com/search?q=The+Godfather+Mario+Puzo"
+  },
+  "The Marvelous Mrs. Maisel": {
+   "show": "The Marvelous Mrs. Maisel",
+   "title": "Postcards from the Edge",
+   "author": "Carrie Fisher",
+   "year": 1987,
+   "goodreads_url": "https://www.goodreads.com/search?q=Postcards+from+the+Edge+Carrie+Fisher"
+  },
+  "Hacks": {
+   "show": "Hacks",
+   "title": "Postcards from the Edge",
+   "author": "Carrie Fisher",
+   "year": 1987,
+   "goodreads_url": "https://www.goodreads.com/search?q=Postcards+from+the+Edge+Carrie+Fisher"
+  },
+  "Feud": {
+   "show": "Feud",
+   "title": "Valley of the Dolls",
+   "author": "Jacqueline Susann",
+   "year": 1966,
+   "goodreads_url": "https://www.goodreads.com/book/show/581811.Valley_of_the_Dolls"
+  },
+  "Selling Sunset": {
+   "show": "Selling Sunset",
+   "title": "The Devil Wears Prada",
+   "author": "Lauren Weisberger",
+   "year": 2003,
+   "goodreads_url": "https://www.goodreads.com/search?q=The+Devil+Wears+Prada+Lauren+Weisberger"
+  },
+  "Emily in Paris": {
+   "show": "Emily in Paris",
+   "title": "The Devil Wears Prada",
+   "author": "Lauren Weisberger",
+   "year": 2003,
+   "goodreads_url": "https://www.goodreads.com/search?q=The+Devil+Wears+Prada+Lauren+Weisberger"
+  },
+  "Gossip Girl": {
+   "show": "Gossip Girl",
+   "title": "Bonfire of the Vanities",
+   "author": "Tom Wolfe",
+   "year": 1987,
+   "goodreads_url": "https://www.goodreads.com/search?q=Bonfire+of+the+Vanities+Tom+Wolfe"
+  },
+  "Fleabag": {
+   "show": "Fleabag",
+   "title": "Bridget Jones's Diary",
+   "author": "Helen Fielding",
+   "year": 1996,
+   "goodreads_url": "https://www.goodreads.com/search?q=Bridget+Jones%27s+Diary+Helen+Fielding"
+  },
+  "Schitt's Creek": {
+   "show": "Schitt's Creek",
+   "title": "Cold Comfort Farm",
+   "author": "Stella Gibbons",
+   "year": 1932,
+   "goodreads_url": "https://www.goodreads.com/search?q=Cold+Comfort+Farm+Stella+Gibbons"
+  },
+  "Ted Lasso": {
+   "show": "Ted Lasso",
+   "title": "Anne of Green Gables",
+   "author": "L. M. Montgomery",
+   "year": 1908,
+   "goodreads_url": "https://www.goodreads.com/search?q=Anne+of+Green+Gables+L.+M.+Montgomery"
+  },
+  "The Bear": {
+   "show": "The Bear",
+   "title": "Kitchen Confidential",
+   "author": "Anthony Bourdain",
+   "year": 2000,
+   "goodreads_url": "https://www.goodreads.com/search?q=Kitchen+Confidential+Anthony+Bourdain"
+  },
+  "Chernobyl": {
+   "show": "Chernobyl",
+   "title": "Voices from Chernobyl",
+   "author": "Svetlana Alexievich",
+   "year": 2005,
+   "goodreads_url": "https://www.goodreads.com/search?q=Voices+from+Chernobyl+Svetlana+Alexievich"
+  }
+ }
+}

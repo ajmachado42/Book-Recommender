@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show Series — Book Recommendation Machine</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="app-shell">
+      <header>
+        <div class="brand" aria-label="Show Series home">
+          <span class="mark" aria-hidden="true">
+            <span></span>
+            <span></span>
+          </span>
+          <span class="brand-title">
+            Show Series - Book Recommendation Machine by Adriana J. Machado
+          </span>
+        </div>
+      </header>
+
+      <main class="machine">
+        <section class="intro-panel">
+  
+          <h1 class="hero-heading">
+            <span class="heading-line heading-line-primary">Less screens.</span>
+            <span class="heading-line heading-line-secondary fg-inline-italic">More books.</span>
+          </h1>
+
+          <p class="intro">
+            Name a current show you love.
+            <br />
+            We’ll find the classic book that gives you the same feeling.
+          </p>
+
+          <form id="show-form" aria-label="Book match form">
+            <div class="input-row">
+              <input
+                id="show"
+                name="show"
+                type="text"
+                placeholder='Try "RHOSLC"'
+                autocomplete="off"
+              />
+              <button id="submit-btn" type="submit">
+                Match me <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </form>
+
+          <div class="suggestions" aria-label="Popular show suggestions">
+            <span>Popular:</span>
+            <button type="button" class="suggestion" data-show="White Lotus">White Lotus</button>
+            <button type="button" class="suggestion" data-show="Severance">Severance</button>
+            <button type="button" class="suggestion" data-show="Euphoria">Euphoria</button>
+            <button type="button" class="suggestion" data-show="Slow Horses">Slow Horses</button>
+          </div>
+        </section>
+
+        <section class="result-panel" aria-live="polite">
+          <article class="result-card fresh" id="result-card">
+            <div class="result-copy">
+              <p>
+                If you like <strong id="selected-show">your show</strong>, then you'll love...
+              </p>
+              <h2 id="book-title">
+                <a id="book-link" href="#" target="_blank" rel="noopener noreferrer">Book Title</a>
+              </h2>
+              <div class="author" id="book-author">by Author Name</div>
+            </div>
+            <div class="card-footer">
+              <span id="book-year">Published —</span>
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <footer>
+        <span>One show in. One book out.</span>
+        <span>ENHANCE ENHANCE LLC</span>
+      </footer>
+    </div>
+
+    <script>
+      const form = document.getElementById('show-form');
+      const input = document.getElementById('show');
+      const submitButton = document.getElementById('submit-btn');
+      const selectedShow = document.getElementById('selected-show');
+      const bookLink = document.getElementById('book-link');
+      const bookAuthor = document.getElementById('book-author');
+      const bookYear = document.getElementById('book-year');
+
+      // Recommendations are precomputed by build_static.py so the site runs
+      // as static files with no Python server.
+      let catalogPromise = null;
+      function loadCatalog() {
+        if (!catalogPromise) {
+          catalogPromise = fetch('recommendations.json').then((r) => {
+            if (!r.ok) throw new Error('Could not load recommendations');
+            return r.json();
+          });
+        }
+        return catalogPromise;
+      }
+
+      // Similarity ratio like Python's difflib: 2 * matches / total length.
+      function similarity(a, b) {
+        const prev = new Array(b.length + 1).fill(0);
+        for (let i = 1; i <= a.length; i++) {
+          let diag = 0;
+          for (let j = 1; j <= b.length; j++) {
+            const tmp = prev[j];
+            prev[j] = a[i - 1] === b[j - 1] ? diag + 1 : Math.max(prev[j], prev[j - 1]);
+            diag = tmp;
+          }
+        }
+        return (2 * prev[b.length]) / (a.length + b.length || 1);
+      }
+
+      function findShow(lookup, query) {
+        const q = query.trim().toLowerCase();
+        const candidates = [q, q.startsWith('the ') ? q.slice(4) : q, 'the ' + q];
+        for (const c of candidates) {
+          if (lookup[c]) return lookup[c];
+        }
+        let best = null;
+        let bestScore = 0.75;
+        for (const key of Object.keys(lookup)) {
+          const score = similarity(q, key);
+          if (score >= bestScore) {
+            best = lookup[key];
+            bestScore = score;
+          }
+        }
+        return best;
+      }
+
+      function setLoadingState(isLoading) {
+        submitButton.disabled = isLoading || !input.value.trim();
+        submitButton.innerHTML = isLoading
+          ? 'Loading…'
+          : 'Match me <span aria-hidden="true">→</span>';
+      }
+
+      function renderRecommendation(data) {
+        selectedShow.textContent = data.show;
+        bookLink.textContent = data.title;
+        bookLink.href = data.goodreads_url;
+        bookAuthor.textContent = `by ${data.author}`;
+        bookYear.textContent = `Published ${data.year}`;
+      }
+
+      async function fetchRecommendation(showName) {
+        const catalog = await loadCatalog();
+        const title = findShow(catalog.lookup, showName);
+        if (!title || !catalog.shows[title]) {
+          throw new Error(`No recommendation found for '${showName}'`);
+        }
+        return catalog.shows[title];
+      }
+
+      function updateButtonState() {
+        submitButton.disabled = !input.value.trim();
+      }
+
+      input.addEventListener('input', updateButtonState);
+      updateButtonState();
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const value = input.value.trim();
+        if (!value) return;
+
+        setLoadingState(true);
+        try {
+          const recommendation = await fetchRecommendation(value);
+          renderRecommendation(recommendation);
+        } catch (error) {
+          selectedShow.textContent = value;
+          bookLink.textContent = 'No match found';
+          bookLink.href = '#';
+          bookAuthor.textContent = 'Try a different show';
+          bookYear.textContent = 'Published —';
+        } finally {
+          setLoadingState(false);
+        }
+      });
+
+      document.querySelectorAll('.suggestion').forEach((button) => {
+        button.addEventListener('click', async () => {
+          const show = button.dataset.show;
+          input.value = show;
+          updateButtonState();
+          setLoadingState(true);
+          try {
+            const recommendation = await fetchRecommendation(show);
+            renderRecommendation(recommendation);
+          } finally {
+            setLoadingState(false);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
