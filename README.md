@@ -18,3 +18,12 @@ How it works:
      emotional fingerprint: eight feelings (joy, sadness, fear, anger, tension, warmth, humor, hope), an overall sentiment (bleak to uplifting) and an intensity (gentle to relentless). 
      Final score = (1 - w) * theme match + w * emotional match, where w is the emotion weight (default 0.35, set with --emotion-weight; 0 = themes only).
   5. A small set of hand-curated "editor's picks" always rank first, so signature pairings (e.g. Real Housewives -> Valley of the Dolls) are guaranteed.
+
+Live site: https://ajmachado42.github.io/Book-Recommender/
+
+Publishing:
+  The site is static and hosted on GitHub Pages. The page reads code/recommendations.json instead of calling the Python server.
+  After editing the catalog in code/book_recommender.py, regenerate the JSON and push:
+      python3 code/build_static.py
+      git add -A && git commit -m "Update catalog" && git push
+  To run the original Python server locally instead: python3 code/book_recommendations.py
